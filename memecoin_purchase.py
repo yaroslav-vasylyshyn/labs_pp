@@ -8,8 +8,11 @@ class MemeCoinPurchase(Order):
         self.coin_ticker = coin_ticker
 
     def confirm_purchase(self):
-        print(f"Покупка {self.coin_ticker} для {self.user.get_user_name()}")
-        self.wallet.redeem_from_the_wallet(self.order_amount)
+        if self.wallet.wallet_balance >= self.order_amount:
+            print(f"Purchase {self.coin_ticker} for {self.user.user_name}")
+            self.wallet.redeem_from_the_wallet(self.order_amount)
+        else:
+            print(f"Insuficient funds {self.coin_ticker}")
 
     def display_info(self):
         super().display_info()

@@ -22,14 +22,14 @@ def main():
     IncomeTax.display_income_tax_rate()
     MilitaryTax.display_military_tax_rate()
 
-    tax1 = TotalTax(wallet1.get_wallet_balance())
+    tax1 = TotalTax(wallet1.wallet_balance)
     tax1.calculate_total_tax()
 
     print("\n--- Покупка мемкоїна ---")
     purchase2.confirm_purchase()
     purchase2.display_info()
 
-    tax2 = TotalTax(wallet2.get_wallet_balance())
+    tax2 = TotalTax(wallet2.wallet_balance)
     tax2.calculate_total_tax()
 
     order1 = Order(user1, wallet1, 10)

@@ -3,14 +3,20 @@ class Wallet:
         self.__wallet_address = wallet_address
         self.__wallet_balance = wallet_balance
 
-    def get_wallet_address(self):
+    @property
+    def wallet_address(self):
         return self.__wallet_address
     
-    def get_wallet_balance(self):
+    @property
+    def wallet_balance(self):
         return self.__wallet_balance
 
-    def add_to_wallet(self, amount):
-        self.__wallet_balance += amount
+    @wallet_balance.setter
+    def wallet_balance(self, amount):
+        if amount >= 0:
+            self.__wallet_balance = amount
+        else:
+            print("Сума повинна бути більше або дорівнювати 0")
 
     def redeem_from_the_wallet(self, amount):
         if amount <= self.__wallet_balance:

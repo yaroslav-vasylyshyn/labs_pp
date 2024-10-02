@@ -8,10 +8,10 @@ class Order:
         self.order_amount = order_amount
 
     def confirm_order(self):
-        print(f"Підтвердження замовлення для {self.user.get_user_name()} на суму {self.order_amount} USD")
+        print(f"Підтвердження замовлення для {self.user.user_name} на суму {self.order_amount} USD")
         self.wallet.redeem_from_the_wallet(self.order_amount)
 
     def display_info(self):
         self.user.display_user_info()
         print(f"Сума замовлення: {self.order_amount} USD")
-        print(f"Баланс після замовлення: {self.wallet.get_wallet_balance()} USD")
+        print(f"Баланс після замовлення: {self.wallet.wallet_balance} USD")
